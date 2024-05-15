@@ -1,17 +1,140 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
     <head>
-        <title>
-            Gallery
-        </title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="keywords" content="">
+        <!-- Title -->
+        <title>Home</title>
+        <!-- CSS  -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <script src="https://kit.fontawesome.com/0e2a546cdb.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
+		<header>
+			
+			<h1 name="page_logo">
+				<b>
+					<img src="img/img1.png" class="logo" id="main">
+				</b>
+			</h1>
 
-    </body>
+			<h1 name="page_title">
+				<b>
+					Pick Up Lines
+				</b>
+			</h1>
 
-    <footer>
+			<nav>
+		      <ul class="topmenu">
+				
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="biblio.html">Biblio</a></li>
+				
+		      </ul>
+		    </nav>
+		</header>
 
-    </footer>
+		<ul class=flashes>
+			<li style="color: tomato;">{{ message }}</li>
+		</ul>
+
+        
+		<footer class="footer">
+			
+			<div class="footer__addr">
+
+				<a href="#main"><img src="{{ url_for('static', filename='images/uwp_logo.png')}}" class="logo"></a>
+					
+				<h2 id="contact">
+					Contact
+				</h2>
+				
+				<address>
+					
+				<a class="footer__btn" href="mailto:vlad.shurigin2014@gmail.com">Email Us</a>
+
+				</address>
+
+			</div>
+
+			<div class="debugging">
+
+				<li>
+							{{ item }}
+				</li>
+
+			</div>
+			
+			<ul class="footer__nav">
+
+				<li class="nav__item">
+
+				<h2 class="nav__title">Account</h2>
+
+				<ul class="nav__ul">
+
+					{% block footer_account %}{% endblock %}
+
+				</ul>
+
+				</li>
+				
+				<li class="nav__item">
+
+					<h2 class="nav__title">
+						Legal
+					</h2>
+				
+					<ul class="nav__ul">
+						<li>
+							<a href="#">
+								Privacy Policy
+							</a>
+						</li>
+
+						<li>
+							<a href="#">
+								Terms of Use
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav__item">
+					<p>
+						Этот сайт был сделан бла бла бал балабал балабалабаалабалабалаба балааб алабал абла б ла б ла ба ла бла бала б ла бала ба ла бала баалаб
+					</p>
+				</li>
+			</ul>
+			
+			<div class="legal">
+
+				<p>
+					&copy; 2022 Punch'n Poncho. All rights reserved.
+				</p>
+				
+				<div class="legal__links">
+
+					<b> <span style="color:black;">
+						Stand With Ukraine <span class="heart">♥</span>
+					</span> 
+					</b>
+				</div>
+
+			</div>
+
+		</footer>
+
+	</body>
+
+    <script src="https://kit.fontawesome.com/0e2a546cdb.js" crossorigin="anonymous"></script>
+
 </html>
-
