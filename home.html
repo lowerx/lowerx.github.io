@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="keywords" content="">
+        <!-- Title -->
+        <title>Home</title>
+        <!-- CSS  -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+
+        <script src="https://kit.fontawesome.com/0e2a546cdb.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+		<header>
+			
+			<h1 name="page_logo">
+				<b>
+					<img src="img/img1.png" class="logo" id="main">
+				</b>
+			</h1>
+
+			<h1 name="page_title">
+				<b>
+					{% block page_title %}{% endblock %}
+				</b>
+			</h1>
+
+			<nav>
+		      <ul class="topmenu">
+				{% block navbar %}
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="#contact">Contact</a></li>
+				{% endblock %}
+		      </ul>
+		    </nav>
+		</header>
+		
+
+		
+		{% block content %}
+			{% for post in range(len, -1, -1) %}
+				<script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post={{ posts[post].url }} data-width="100%"></script>
+			{% endfor %}
+		{% endblock %}
+
+		{% if messages %}
+			<ul class=flashes>
+				{% for message in messages %}
+					<li style="color: tomato;">{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+        
+		<footer class="footer">
+			
+			<div class="footer__addr">
+
+				<a href="#main"><img src="{{ url_for('static', filename='images/uwp_logo.png')}}" class="logo"></a>
+					
+				<h2 id="contact">
+					Contact
+				</h2>
+				
+				<address>
+					
+				<a class="footer__btn" href="mailto:vlad.shurigin2014@gmail.com">Email Us</a>
+
+				</address>
+
+			</div>
+
+			<div class="debugging">
+
+				{% block debug %}
+					{% for item in info %}
+						<li>
+							{{ item }}
+						</li>
+					{% endfor %}
+				{% endblock %}
+
+			</div>
+			
+			<ul class="footer__nav">
+
+				<li class="nav__item">
+
+				<h2 class="nav__title">Account</h2>
+
+				<ul class="nav__ul">
+
+					{% block footer_account %}{% endblock %}
+
+				</ul>
+
+				</li>
+				
+				<li class="nav__item">
+
+					<h2 class="nav__title">
+						Legal
+					</h2>
+				
+					<ul class="nav__ul">
+						<li>
+							<a href="#">
+								Privacy Policy
+							</a>
+						</li>
+
+						<li>
+							<a href="#">
+								Terms of Use
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav__item">
+					<p>
+						Этот сайт был сделан бла бла бал балабал балабалабаалабалабалаба балааб алабал абла б ла б ла ба ла бла бала б ла бала ба ла бала баалаб
+					</p>
+				</li>
+			</ul>
+			
+			<div class="legal">
+
+				<p>
+					&copy; 2022 Punch'n Poncho. All rights reserved.
+				</p>
+				
+				<div class="legal__links">
+
+					<b> <span style="color:black;">
+						Stand With Ukraine <span class="heart">♥</span>
+					</span> 
+					</b>
+				</div>
+
+			</div>
+
+		</footer>
+
+	</body>
+
+    <script src="https://kit.fontawesome.com/0e2a546cdb.js" crossorigin="anonymous"></script>
+
+</html>
